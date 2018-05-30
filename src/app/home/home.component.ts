@@ -14,8 +14,8 @@ export class HomeComponent implements OnInit {
   constructor(private router : Router, private routes : ActivatedRoute) {
 
     this.routes.queryParams.subscribe((params : Params) => {
-        if(params['returnUrl'] != undefined) {
-              this.returnUrl = params['returnUrl'];
+        if(params['return_url'] != undefined) {
+              this.returnUrl = params['return_url'];
         }
     });
   }
