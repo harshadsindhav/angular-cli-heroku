@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   submitOrder() {
     console.log("Redirecting to " + this.returnUrl);
-    let redirectUrl = this.returnUrl + "decision_code=200&transaction_id=99999999999&error_mesg=";
+    let redirectUrl = this.returnUrl + "?decision_code=200&transaction_id=99999999999&error_mesg=";
     window.location.href = this.returnUrl;
 }
 
