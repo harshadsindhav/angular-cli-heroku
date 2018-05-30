@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  @Input() returnUrl : string;
+
+
+  constructor(private router : Router, private routes : ActivatedRoute) {
+
+    this.routes.queryParams.subscribe((params : Params) => {
+        if(params['returnUrl'] != undefined) {
+              this.returnUrl = params['returnUrl'];
+        }
+    });
+  }
 
   ngOnInit() {
   }
+
+  submitOrder() {
+    window.location.href = this.returnUrl;
+}
 
 }
