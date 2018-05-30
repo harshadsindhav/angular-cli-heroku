@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   submitOrder() {
+    console.log("Redirecting to " + this.returnUrl);
     window.location.href = this.returnUrl;
 }
 
