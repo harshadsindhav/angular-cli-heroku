@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   }
 
   submitOrder() {
-    let redirectUrl = this.returnUrl + "&decision_code=" + this.decision_code + "&transaction_id=" + this.transaction_id + "&currency=" + this.currency + "&total_amt=" + this.amount + "&error_mesg=" + this.error_mesg;
+    let redirectUrl = this.returnUrl + "&decision_code=" + this.decision_code + "&transaction_id=" + this.transaction_id + "&currency=" + this.currency + "&amount=" + this.amount + "&error_mesg=" + this.error_mesg;
     console.log("Redirecting to " + redirectUrl);
     window.location.href = redirectUrl;
 }
